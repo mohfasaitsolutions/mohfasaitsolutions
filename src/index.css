@@ -6,7 +6,7 @@
   :root {
     color-scheme: light;
   }
-  
+
   body {
     background-color: #FAFAFA;
     color: #09090B;
@@ -37,6 +37,39 @@
   background: #FAFAFA;
 }
 
+.animate-gradient-mesh {
+  background-size: 200% 200%;
+  animation: gradient-mesh 12s ease infinite;
+}
+
+/* 45-Degree Alternating Gradient Grid with Top-to-Bottom Fade Mask */
+.grid-45-fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(45deg, rgba(37, 99, 235, 0.09) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0) 95%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0) 95%);
+}
+
+/* Alternate 45-Degree Diamond Grid Accent */
+.grid-45-alternate {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: 64px 64px;
+  background-image: 
+    linear-gradient(45deg, rgba(37, 99, 235, 0.06) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(37, 99, 235, 0.06) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(168, 85, 247, 0.05) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(168, 85, 247, 0.05) 75%);
+  -webkit-mask-image: linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
 ::-webkit-scrollbar-thumb {
   background: #D4D4D8;
   border-radius: 3px;
@@ -63,8 +96,9 @@
 
 /* Desktop Custom Cursor Activation */
 @media (min-width: 1024px) {
-  .custom-cursor-active, 
-  .custom-cursor-active a, 
+
+  .custom-cursor-active,
+  .custom-cursor-active a,
   .custom-cursor-active button,
   .custom-cursor-active input,
   .custom-cursor-active select,
