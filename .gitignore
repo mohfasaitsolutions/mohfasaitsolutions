@@ -1,1 +1,70 @@
-node_modules
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build & Output files
+dist/
+**/dist/
+build/
+.next/
+out/
+coverage/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime & Databases
+pids/
+*.pid
+*.seed
+*.pid.lock
+*.db
+*.db-journal
+prisma/*.db
+prisma/*.db-journal
+**/prisma/*.db
+**/prisma/*.db-journal
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Package managers
+.pnp
+.pnp.js
+
+# Deployment
+.vercel/
+.netlify/
+.firebase/
+
+# Uploads
+uploads/
+public/uploads/
+
+# Generated files
+generated/
