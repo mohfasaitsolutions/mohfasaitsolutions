@@ -1,0 +1,145 @@
+// Prisma Schema for MOHFASA IT Solutions Consultation Platform (SQLite Zero-Setup Local DB)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// -------------------------------------------------
+// ENUMS
+// -------------------------------------------------
+
+enum Industry {
+  RESTAURANT
+  HOTEL
+  HEALTHCARE
+  EDUCATION
+  NGO
+  RETAIL
+  MANUFACTURING
+  FINANCE
+  REAL_ESTATE
+  TECHNOLOGY
+  OTHER
+}
+
+enum CompanySize {
+  SOLO
+  STARTUP
+  SMALL
+  MEDIUM
+  ENTERPRISE
+}
+
+enum Budget {
+  UNDER_1000
+  BETWEEN_1000_5000
+  BETWEEN_5000_10000
+  BETWEEN_10000_25000
+  ABOVE_25000
+}
+
+enum ExpectedStart {
+  IMMEDIATELY
+  TWO_WEEKS
+  ONE_MONTH
+  ONE_TO_THREE_MONTHS
+  JUST_EXPLORING
+}
+
+enum PreferredContact {
+  EMAIL
+  PHONE
+  WHATSAPP
+}
+
+enum ReferralSource {
+  INSTAGRAM
+  LINKEDIN
+  GOOGLE
+  REFERRAL
+  FACEBOOK
+  WEBSITE
+  EMAIL
+  OTHER
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  MEETING_SCHEDULED
+  PROPOSAL_SENT
+  NEGOTIATION
+  WON
+  LOST
+  ON_HOLD
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+// -------------------------------------------------
+// MODELS
+// -------------------------------------------------
+
+model ConsultationRequest {
+  id                 String                @id @default(uuid())
+  fullName           String
+  companyName        String?
+  email              String
+  phone              String?
+  country            String?
+  industry           Industry
+  companySize        CompanySize?
+  services           String                // Stored as JSON array string
+  projectTitle       String?
+  projectDescription String
+  budget             Budget?
+  expectedStart      ExpectedStart?
+  preferredContact   PreferredContact?
+  referralSource     ReferralSource?
+  meetingRequired    Boolean               @default(true)
+  ndaRequired        Boolean               @default(false)
+  status             LeadStatus            @default(NEW)
+  priority           Priority              @default(MEDIUM)
+  notes              String?
+  createdAt          DateTime              @default(now())
+  updatedAt          DateTime              @updatedAt
+
+  files              ConsultationFile[]
+  activities         ConsultationActivity[]
+
+  @@map("consultation_requests")
+}
+
+model ConsultationFile {
+  id             String              @id @default(uuid())
+  consultationId String
+  fileName       String
+  fileUrl        String
+  mimeType       String
+  createdAt      DateTime            @default(now())
+
+  consultation   ConsultationRequest @relation(fields: [consultationId], references: [id], onDelete: Cascade)
+
+  @@map("consultation_files")
+}
+
+model ConsultationActivity {
+  id             String              @id @default(uuid())
+  consultationId String
+  activity       String
+  createdBy      String              @default("SYSTEM")
+  createdAt      DateTime            @default(now())
+
+  consultation   ConsultationRequest @relation(fields: [consultationId], references: [id], onDelete: Cascade)
+
+  @@map("consultation_activities")
+}
