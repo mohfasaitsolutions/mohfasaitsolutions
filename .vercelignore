@@ -1,6 +1,8 @@
-backend/
-api/
-node_modules/
+backend
+backend/**
+api
+api/**
+node_modules
 .env
 .env.*
 !.env.example
