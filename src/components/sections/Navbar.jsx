@@ -79,7 +79,7 @@ export default function Navbar({ onOpenConsultation }) {
         <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={onOpenConsultation}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2563EB] text-white text-xs font-semibold hover:bg-blue-600 transition-colors shadow-[0_4px_14px_rgba(37,99,235,0.3)]"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#2563EB] text-white text-xs font-semibold hover:bg-blue-600 transition-colors shadow-[0_4px_14px_rgba(37,99,235,0.3)]"
           >
             <span>Book a Free Consultation</span>
             <FiArrowUpRight className="w-4 h-4" />

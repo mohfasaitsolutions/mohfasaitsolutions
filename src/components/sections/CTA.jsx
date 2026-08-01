@@ -1,54 +1,68 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FiArrowRight, FiMessageSquare } from 'react-icons/fi';
 import MagneticButton from '../ui/MagneticButton';
+import BackgroundBeams from '../ui/BackgroundBeams';
 
 export default function CTA({ onOpenConsultation }) {
   return (
     <section
       id="contact"
-      className="py-28 md:py-36 bg-[#F4F4F5] border-t border-black/10 relative overflow-hidden text-center"
+      className="py-20 md:py-28 bg-[#FAFAFA] border-t border-black/10 relative overflow-hidden"
     >
-      {/* Subtle Light Grid Pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(#2563EB 1px, transparent 0)',
-          backgroundSize: '32px 32px',
-        }}
-      />
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 30, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="relative rounded-[32px] bg-gradient-to-r from-[#0B0F19] via-[#0F172A] to-[#1E1B4B] p-10 md:p-16 text-center text-white overflow-hidden shadow-2xl border border-white/10"
+        >
+          {/* Aceternity UI Background Beams inside card */}
+          <BackgroundBeams />
 
-      <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10 space-y-8">
-        <span className="inline-block text-xs font-mono text-[#2563EB] px-4 py-1.5 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/20 uppercase tracking-widest font-semibold">
-          LET'S BUILD SOMETHING EXTRAORDINARY
-        </span>
+          <div className="relative z-10 space-y-8 max-w-3xl mx-auto">
+            <span className="inline-block text-xs font-mono text-blue-400 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 uppercase tracking-widest font-semibold">
+              LET'S BUILD SOMETHING EXTRAORDINARY
+            </span>
 
-        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#09090B] leading-tight">
-          Ready to Build the Future <br />
-          <span className="text-[#2563EB]">of Your Business?</span>
-        </h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              Ready to Build the Future <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
+                of Your Business?
+              </span>
+            </h2>
 
-        <p className="text-base md:text-lg text-[#52525B] max-w-2xl mx-auto leading-relaxed">
-          Let’s discuss how Mohfasa IT Solutions can help automate operations, optimize workflows, and scale your technology with confidence.
-        </p>
+            <p className="text-sm md:text-base text-slate-300 max-w-xl mx-auto leading-relaxed font-normal">
+              Let’s discuss how Mohfasa IT Solutions can help automate operations, optimize workflows, and scale your technology with confidence.
+            </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <MagneticButton variant="primary" onClick={onOpenConsultation}>
-            <span>Book a Free Consultation</span>
-            <FiArrowRight className="w-4 h-4" />
-          </MagneticButton>
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+              <MagneticButton variant="primary" onClick={onOpenConsultation}>
+                <span>Book a Free Consultation</span>
+                <FiArrowRight className="w-4 h-4" />
+              </MagneticButton>
 
-          <MagneticButton variant="secondary" onClick={onOpenConsultation}>
-            <FiMessageSquare className="w-4 h-4 text-[#2563EB]" />
-            <span>Let's Talk</span>
-          </MagneticButton>
-        </div>
+              <button 
+                onClick={onOpenConsultation}
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-medium text-sm transition-all duration-300 shadow-lg backdrop-blur-md"
+              >
+                <FiMessageSquare className="w-4 h-4 text-blue-400" />
+                <span>Let's Talk</span>
+              </button>
+            </div>
 
-        <div className="pt-8 flex flex-wrap justify-center items-center gap-8 text-xs text-[#52525B] font-mono">
-          <span>✓ Zero Obligation Strategy Call</span>
-          <span>✓ NDA Protected</span>
-          <span>✓ Response Within 24 Hours</span>
-        </div>
+            <div className="pt-6 border-t border-white/10 flex flex-wrap justify-center items-center gap-6 text-xs text-slate-400 font-mono">
+              <span>✓ Zero Obligation Strategy Call</span>
+              <span>✓ NDA Protected</span>
+              <span>✓ Response Within 24 Hours</span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+
+
+

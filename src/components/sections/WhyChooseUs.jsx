@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FiTrendingUp, FiMaximize2, FiCpu, FiHeadphones, FiEye, FiCheckSquare } from 'react-icons/fi';
 
 export default function WhyChooseUs() {
@@ -43,7 +44,13 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-3xl mx-auto space-y-4"
+        >
           <span className="text-xs font-mono text-[#2563EB] tracking-widest uppercase font-semibold">
             WHY MOHFASA IT SOLUTIONS
           </span>
@@ -54,15 +61,20 @@ export default function WhyChooseUs() {
           <p className="text-sm md:text-base text-[#52525B]">
             We bridge the gap between complex software engineering and tangible business outcomes.
           </p>
-        </div>
+        </motion.div>
 
         {/* Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.07 }}
+                whileHover={{ y: -6 }}
                 className="why-card bg-white border border-black/10 rounded-[20px] p-8 space-y-4 shadow-sm hover:border-[#2563EB] hover:shadow-md transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-xl bg-[#F4F4F5] border border-black/5 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all duration-300">
@@ -76,7 +88,7 @@ export default function WhyChooseUs() {
                 <p className="text-xs md:text-sm text-[#52525B] leading-relaxed">
                   {pillar.desc}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

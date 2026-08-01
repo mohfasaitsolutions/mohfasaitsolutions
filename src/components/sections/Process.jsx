@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FiArrowDown } from 'react-icons/fi';
 
 export default function Process() {
@@ -37,10 +38,16 @@ export default function Process() {
 
   return (
     <section className="py-24 md:py-32 bg-[#FAFAFA] border-t border-black/10 relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-2xl mx-auto space-y-4"
+        >
           <span className="text-xs font-mono text-[#2563EB] tracking-widest uppercase font-semibold">
             OUR PROVEN METHODOLOGY
           </span>
@@ -51,13 +58,20 @@ export default function Process() {
           <p className="text-sm md:text-base text-[#52525B]">
             A structured, transparent delivery process built for speed, quality, and predictability.
           </p>
-        </div>
+        </motion.div>
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
           {steps.map((item, idx) => (
-            <div key={idx} className="process-step flex flex-col justify-between">
-              <div className="bg-white border border-black/10 rounded-[20px] p-6 space-y-4 h-full flex flex-col justify-between shadow-sm hover:border-[#2563EB] hover:shadow-md transition-colors group">
+            <motion.div 
+              key={idx} 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="process-step flex flex-col justify-between"
+            >
+              <div className="bg-white border border-black/10 rounded-[20px] p-6 space-y-4 h-full flex flex-col justify-between shadow-xs hover:border-[#2563EB] hover:shadow-md transition-all duration-300 group">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-black font-mono text-[#2563EB]">
@@ -86,7 +100,7 @@ export default function Process() {
                   <FiArrowDown className="w-5 h-5 animate-bounce" />
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -94,3 +108,5 @@ export default function Process() {
     </section>
   );
 }
+
+

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FiCheckCircle, FiArrowUpRight, FiServer, FiActivity, FiGlobe, FiDatabase } from 'react-icons/fi';
 
 export default function FeaturedWork({ onOpenConsultation }) {
@@ -70,10 +71,16 @@ export default function FeaturedWork({ onOpenConsultation }) {
       id="portfolio"
       className="py-24 md:py-32 bg-[#FAFAFA] border-t border-black/10 relative"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6"
+        >
           <div className="space-y-3 max-w-2xl">
             <span className="text-xs font-mono text-[#2563EB] tracking-widest uppercase font-semibold">
               FEATURED CASE STUDIES
@@ -86,16 +93,21 @@ export default function FeaturedWork({ onOpenConsultation }) {
           <p className="text-sm md:text-base text-[#52525B] max-w-md">
             Explore how our custom engineering transformed operational efficiency across diverse industries.
           </p>
-        </div>
+        </motion.div>
 
         {/* 6 Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, idx) => {
             const MockupIcon = project.mockupIcon;
             return (
-              <div
+              <motion.div
                 key={idx}
-                className="project-card bg-white border border-black/10 rounded-[20px] p-8 space-y-6 flex flex-col justify-between shadow-sm hover:border-[#2563EB] hover:shadow-lg transition-all duration-300 group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                whileHover={{ y: -6 }}
+                className="project-card bg-white border border-black/10 rounded-[20px] p-8 space-y-6 flex flex-col justify-between shadow-xs hover:border-[#2563EB] hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="space-y-5">
                   {/* Top Minimal UI Mockup Header */}
@@ -155,7 +167,7 @@ export default function FeaturedWork({ onOpenConsultation }) {
                     <FiArrowUpRight className="w-4 h-4" />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -164,3 +176,6 @@ export default function FeaturedWork({ onOpenConsultation }) {
     </section>
   );
 }
+
+
+

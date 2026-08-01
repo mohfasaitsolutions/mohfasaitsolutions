@@ -25,7 +25,7 @@ export default function Statistics() {
     { target: 100, suffix: '+', label: 'Projects Delivered', desc: 'Across 10+ industries worldwide' },
     { target: 98, suffix: '%', label: 'Client Satisfaction', desc: 'Based on long-term client retention' },
     { static: '24/7', label: 'Support & Monitoring', desc: 'Real-time proactive uptime surveillance' },
-    { target: 99.9, suffix: '%', isDecimal: true, label: 'Reliable Solutions', desc: 'SLA uptime SLA for cloud systems' },
+    { target: 99.9, suffix: '%', isDecimal: true, label: 'Reliable Solutions', desc: 'SLA uptime for cloud systems' },
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function Statistics() {
       className="py-20 md:py-28 bg-[#FAFAFA] border-t border-black/10 relative"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {statsData.map((stat, idx) => (
             <StatCard key={idx} stat={stat} isVisible={isVisible} />
           ))}
@@ -68,7 +68,7 @@ function StatCard({ stat, isVisible }) {
   }, [isVisible, stat]);
 
   return (
-    <div className="bg-white border border-black/10 rounded-[20px] p-8 text-center space-y-2 shadow-sm hover:border-[#2563EB] transition-colors">
+    <div className="bg-white border border-black/10 rounded-[20px] p-8 text-center space-y-2 shadow-xs hover:border-[#2563EB] transition-colors">
       <div className="text-4xl md:text-5xl font-extrabold text-[#09090B] tracking-tight font-mono">
         {stat.static ? (
           <span className="text-[#2563EB]">{stat.static}</span>
@@ -86,3 +86,5 @@ function StatCard({ stat, isVisible }) {
     </div>
   );
 }
+
+

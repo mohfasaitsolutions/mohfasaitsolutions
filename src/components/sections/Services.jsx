@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   FiCpu,
   FiCode,
@@ -9,6 +10,7 @@ import {
   FiBriefcase,
   FiArrowUpRight,
 } from 'react-icons/fi';
+import SpotlightCard from '../ui/SpotlightCard';
 
 export default function Services({ onOpenConsultation }) {
   const servicesData = [
@@ -106,73 +108,89 @@ export default function Services({ onOpenConsultation }) {
   return (
     <section
       id="services"
-      className="py-24 md:py-32 bg-[#FAFAFA] relative"
+      className="py-24 md:py-32 bg-[#FAFAFA] border-t border-black/10 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6"
+        >
           <div className="space-y-3 max-w-2xl">
             <span className="text-xs font-mono text-[#2563EB] tracking-widest uppercase font-semibold">
               OUR CORE CAPABILITIES
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#09090B]">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#09090B] leading-tight">
               End-to-End Technology Solutions <br />
               <span className="text-[#2563EB]">For Modern Business.</span>
             </h2>
           </div>
-          <p className="text-sm md:text-base text-[#52525B] max-w-md">
+          <p className="text-sm md:text-base text-[#52525B] max-w-md leading-relaxed">
             We provide full-spectrum engineering and digital growth services tailored to transform operational efficiency.
           </p>
-        </div>
+        </motion.div>
 
-        {/* 7 Services Grid */}
+        {/* Services Grid with Sleek Dark Gradient Spotlight Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicesData.map((service, idx) => {
             const Icon = service.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
-                className="service-card group relative bg-white border border-black/10 rounded-[20px] p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#2563EB] hover:shadow-lg flex flex-col justify-between"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
               >
-                <div>
-                  {/* Top Bar with Icon & Action Link */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-[#F4F4F5] border border-black/5 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all duration-300">
-                      <Icon className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <button
-                      onClick={onOpenConsultation}
-                      aria-label={`Consult for ${service.title}`}
-                      className="text-[#52525B] hover:text-[#2563EB] transition-colors p-2"
-                    >
-                      <FiArrowUpRight className="w-5 h-5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </button>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-[#09090B] mb-2 group-hover:text-[#2563EB] transition-colors">
-                    {service.title}
-                  </h3>
-
-                  <p className="text-xs md:text-sm text-[#52525B] leading-relaxed mb-6">
-                    {service.desc}
-                  </p>
-                </div>
-
-                {/* Sub-items Pill List */}
-                <div className="pt-6 border-t border-black/10 space-y-2">
-                  <div className="flex flex-wrap gap-1.5">
-                    {service.items.map((item, itemIdx) => (
-                      <span
-                        key={itemIdx}
-                        className="px-2.5 py-1 bg-[#F4F4F5] border border-black/5 rounded-md text-[11px] font-mono text-[#52525B] group-hover:border-black/15 transition-colors"
+                <SpotlightCard
+                  spotlightColor="rgba(59, 130, 246, 0.3)"
+                  borderColor="rgba(255, 255, 255, 0.12)"
+                  hoverBorderColor="rgba(37, 99, 235, 0.6)"
+                  className="group flex flex-col justify-between h-full bg-gradient-to-br from-[#0B0F19] via-[#0F172A] to-[#1E1B4B] text-white shadow-xl hover:shadow-2xl transition-all duration-300"
+                >
+                  <div>
+                    {/* Top Bar with Icon & Action Link */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-blue-400 group-hover:bg-[#2563EB] group-hover:text-white group-hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-300">
+                        <Icon className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <button
+                        onClick={onOpenConsultation}
+                        aria-label={`Consult for ${service.title}`}
+                        className="text-slate-400 hover:text-blue-400 transition-colors p-2"
                       >
-                        {item}
-                      </span>
-                    ))}
+                        <FiArrowUpRight className="w-5 h-5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </button>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-xs md:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                      {service.desc}
+                    </p>
                   </div>
-                </div>
-              </div>
+
+                  {/* Sub-items Pill List */}
+                  <div className="pt-6 border-t border-white/10 space-y-2">
+                    <div className="flex flex-wrap gap-1.5">
+                      {service.items.map((item, itemIdx) => (
+                        <span
+                          key={itemIdx}
+                          className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-slate-300 group-hover:border-blue-400/40 group-hover:text-white transition-colors"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </SpotlightCard>
+              </motion.div>
             );
           })}
         </div>
@@ -181,3 +199,6 @@ export default function Services({ onOpenConsultation }) {
     </section>
   );
 }
+
+
+

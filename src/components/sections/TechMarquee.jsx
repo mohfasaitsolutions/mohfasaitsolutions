@@ -52,7 +52,7 @@ export default function TechMarquee() {
             return (
               <div
                 key={idx}
-                className="inline-flex items-center gap-3 px-6 py-3 bg-white border border-black/10 rounded-full text-sm font-medium text-[#09090B] shadow-sm hover:border-[#2563EB] transition-colors"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-white border border-black/10 rounded-full text-sm font-medium text-[#09090B] shadow-xs hover:border-[#2563EB] transition-colors"
               >
                 <Icon className="w-5 h-5 text-[#2563EB]" />
                 <span>{item.name}</span>
@@ -64,3 +64,5 @@ export default function TechMarquee() {
     </section>
   );
 }
+
+

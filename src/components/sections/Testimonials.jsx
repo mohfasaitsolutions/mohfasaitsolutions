@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { FaQuoteLeft } from 'react-icons/fa';
 
@@ -44,27 +45,42 @@ export default function Testimonials() {
       <div className="max-w-5xl mx-auto px-6 md:px-12 space-y-12">
         
         {/* Header */}
-        <div className="text-center space-y-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center space-y-3"
+        >
           <span className="text-xs font-mono text-[#2563EB] tracking-widest uppercase font-semibold">
             CLIENT SUCCESS STORIES
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#09090B]">
             Trusted By Business Leaders.
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Minimal Light Testimonial Card */}
-        <div className="relative bg-white border border-black/10 rounded-[20px] p-8 md:p-14 space-y-8 shadow-xl overflow-hidden">
-          <FaQuoteLeft className="w-10 h-10 text-[#2563EB]/20 absolute top-8 left-8 -z-0" />
+        {/* Minimal Testimonial Card */}
+        <div className="relative bg-white border border-black/10 rounded-[24px] p-8 md:p-14 space-y-8 shadow-xl overflow-hidden">
+          <FaQuoteLeft className="w-12 h-12 text-[#2563EB]/15 absolute top-8 left-8 -z-0" />
 
           <div className="relative z-10 space-y-6">
-            <p className="text-lg md:text-2xl text-[#09090B] font-medium leading-relaxed italic">
-              "{testimonials[currentIndex].quote}"
-            </p>
+            <AnimatePresence mode="wait">
+              <motion.p 
+                key={currentIndex}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.4 }}
+                className="text-lg md:text-2xl text-[#09090B] font-medium leading-relaxed italic min-h-[100px]"
+              >
+                "{testimonials[currentIndex].quote}"
+              </motion.p>
+            </AnimatePresence>
 
             <div className="flex items-center justify-between pt-6 border-t border-black/10">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#2563EB] text-white flex items-center justify-center font-bold text-base shadow-sm">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#2563EB] to-indigo-600 text-white flex items-center justify-center font-bold text-base shadow-md">
                   {testimonials[currentIndex].avatar}
                 </div>
                 <div>
@@ -102,3 +118,4 @@ export default function Testimonials() {
     </section>
   );
 }
+
