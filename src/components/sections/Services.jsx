@@ -155,7 +155,7 @@ export default function Services({ onOpenConsultation }) {
                   <div>
                     {/* Top Bar with Icon & Action Link */}
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-blue-400 group-hover:bg-[#2563EB] group-hover:text-white group-hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-300">
+                      <div className="w-12 h-12 rounded-md bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-blue-400 group-hover:bg-[#2563EB] group-hover:text-white group-hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-300">
                         <Icon className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-300" />
                       </div>
                       <button

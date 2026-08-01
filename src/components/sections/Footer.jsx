@@ -52,7 +52,7 @@ export default function Footer({ onOpenConsultation }) {
                     href={s.href}
                     target={s.external ? "_blank" : undefined}
                     rel={s.external ? "noopener noreferrer" : undefined}
-                    className="p-2.5 bg-[#F4F4F5] border border-black/10 rounded-full text-[#09090B] hover:border-[#2563EB] hover:text-[#2563EB] transition-colors"
+                    className="p-2.5 bg-[#F4F4F5] border border-black/10 rounded-md text-[#09090B] hover:border-[#2563EB] hover:text-[#2563EB] transition-colors"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -106,12 +106,12 @@ export default function Footer({ onOpenConsultation }) {
                   placeholder="Enter work email..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-[#F4F4F5] border border-black/10 rounded-xl px-3.5 py-2.5 text-xs text-[#09090B] placeholder-gray-400 focus:outline-none focus:border-[#2563EB] transition-colors pr-10"
+                  className="w-full bg-[#F4F4F5] border border-black/10 rounded-md px-3.5 py-2.5 text-xs text-[#09090B] placeholder-gray-400 focus:outline-none focus:border-[#2563EB] transition-colors pr-10"
                 />
                 <button
                   type="submit"
                   aria-label="Subscribe to newsletter"
-                  className="absolute right-1 top-1 bottom-1 px-3 bg-[#2563EB] text-white rounded-lg text-xs hover:bg-blue-600 transition-colors"
+                  className="absolute right-1 top-1 bottom-1 px-3 bg-[#2563EB] text-white rounded-md text-xs hover:bg-blue-600 transition-colors"
                 >
                   {subscribed ? <FiCheck className="w-3.5 h-3.5" /> : <FiArrowRight className="w-3.5 h-3.5" />}
                 </button>

@@ -43,7 +43,7 @@ export default function About() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-              <div className="bg-white border border-black/10 p-6 rounded-[20px] space-y-2.5 shadow-xs hover:border-[#2563EB] transition-colors">
+              <div className="bg-white border border-black/10 p-6 rounded-md space-y-2.5 shadow-xs hover:border-[#2563EB] transition-colors">
                 <FiTarget className="w-6 h-6 text-[#2563EB]" />
                 <h3 className="text-[#09090B] font-semibold text-base">Business Outcomes First</h3>
                 <p className="text-xs text-[#52525B] leading-relaxed">
@@ -51,7 +51,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-white border border-black/10 p-6 rounded-[20px] space-y-2.5 shadow-xs hover:border-[#2563EB] transition-colors">
+              <div className="bg-white border border-black/10 p-6 rounded-md space-y-2.5 shadow-xs hover:border-[#2563EB] transition-colors">
                 <FiZap className="w-6 h-6 text-[#2563EB]" />
                 <h3 className="text-[#09090B] font-semibold text-base">Rapid Deployment</h3>
                 <p className="text-xs text-[#52525B] leading-relaxed">
@@ -67,10 +67,10 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-5 bg-white border border-black/10 rounded-[24px] p-8 space-y-6 shadow-sm"
+            className="lg:col-span-5 bg-white border border-black/10 rounded-md p-8 space-y-6 shadow-sm"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB]">
+              <div className="w-10 h-10 rounded-md bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB]">
                 <FiLayers className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-bold text-[#09090B]">Industries We Empower</h3>
@@ -84,7 +84,7 @@ export default function About() {
               {audienceIndustries.map((industry, idx) => (
                 <div
                   key={idx}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#F4F4F5] border border-black/5 rounded-full text-xs font-medium text-[#09090B] hover:border-[#2563EB] transition-colors cursor-default"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#F4F4F5] border border-black/5 rounded-md text-xs font-medium text-[#09090B] hover:border-[#2563EB] transition-colors cursor-default"
                 >
                   <FiCheckCircle className="text-[#2563EB] w-3.5 h-3.5" />
                   <span>{industry}</span>

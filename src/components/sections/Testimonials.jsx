@@ -61,7 +61,7 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Minimal Testimonial Card */}
-        <div className="relative bg-white border border-black/10 rounded-[24px] p-8 md:p-14 space-y-8 shadow-xl overflow-hidden">
+        <div className="relative bg-white border border-black/10 rounded-md p-8 md:p-14 space-y-8 shadow-xl overflow-hidden">
           <FaQuoteLeft className="w-12 h-12 text-[#2563EB]/15 absolute top-8 left-8 -z-0" />
 
           <div className="relative z-10 space-y-6">
@@ -80,7 +80,7 @@ export default function Testimonials() {
 
             <div className="flex items-center justify-between pt-6 border-t border-black/10">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#2563EB] to-indigo-600 text-white flex items-center justify-center font-bold text-base shadow-md">
+                <div className="w-12 h-12 rounded-md bg-gradient-to-tr from-[#2563EB] to-indigo-600 text-white flex items-center justify-center font-bold text-base shadow-md">
                   {testimonials[currentIndex].avatar}
                 </div>
                 <div>
@@ -98,14 +98,14 @@ export default function Testimonials() {
                 <button
                   onClick={handlePrev}
                   aria-label="Previous testimonial"
-                  className="p-3 bg-[#F4F4F5] border border-black/10 rounded-full text-[#09090B] hover:border-[#2563EB] hover:text-[#2563EB] transition-colors"
+                  className="p-3 bg-[#F4F4F5] border border-black/10 rounded-md text-[#09090B] hover:border-[#2563EB] hover:text-[#2563EB] transition-colors"
                 >
                   <FiChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={handleNext}
                   aria-label="Next testimonial"
-                  className="p-3 bg-[#F4F4F5] border border-black/10 rounded-full text-[#09090B] hover:border-[#2563EB] hover:text-[#2563EB] transition-colors"
+                  className="p-3 bg-[#F4F4F5] border border-black/10 rounded-md text-[#09090B] hover:border-[#2563EB] hover:text-[#2563EB] transition-colors"
                 >
                   <FiChevronRight className="w-5 h-5" />
                 </button>

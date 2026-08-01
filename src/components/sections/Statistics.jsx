@@ -68,7 +68,7 @@ function StatCard({ stat, isVisible }) {
   }, [isVisible, stat]);
 
   return (
-    <div className="bg-white border border-black/10 rounded-[20px] p-8 text-center space-y-2 shadow-xs hover:border-[#2563EB] transition-colors">
+    <div className="bg-white border border-black/10 rounded-md p-8 text-center space-y-2 shadow-xs hover:border-[#2563EB] transition-colors">
       <div className="text-4xl md:text-5xl font-extrabold text-[#09090B] tracking-tight font-mono">
         {stat.static ? (
           <span className="text-[#2563EB]">{stat.static}</span>

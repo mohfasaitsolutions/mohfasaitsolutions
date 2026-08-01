@@ -71,7 +71,7 @@ export default function Process() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="process-step flex flex-col justify-between"
             >
-              <div className="bg-white border border-black/10 rounded-[20px] p-6 space-y-4 h-full flex flex-col justify-between shadow-xs hover:border-[#2563EB] hover:shadow-md transition-all duration-300 group">
+              <div className="bg-white border border-black/10 rounded-md p-6 space-y-4 h-full flex flex-col justify-between shadow-xs hover:border-[#2563EB] hover:shadow-md transition-all duration-300 group">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-black font-mono text-[#2563EB]">

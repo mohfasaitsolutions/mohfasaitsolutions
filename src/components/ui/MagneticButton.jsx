@@ -14,8 +14,8 @@ export default function MagneticButton({ children, className = '', onClick, vari
     setPosition({ x: 0, y: 0 });
   };
 
-  const baseStyles = "relative inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium rounded-full transition-all duration-300 ease-out select-none cursor-pointer active:scale-95";
-  
+  const baseStyles = "relative inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium rounded-md transition-all duration-300 ease-out select-none cursor-pointer active:scale-95";
+
   const variants = {
     primary: "bg-[#2563EB] text-white hover:bg-blue-600 border border-transparent shadow-[0_4px_14px_rgba(37,99,235,0.3)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.45)]",
     secondary: "bg-white text-[#09090B] border border-black/10 hover:border-black/20 hover:bg-[#F4F4F5] shadow-sm",

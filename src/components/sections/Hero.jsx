@@ -46,9 +46,9 @@ export default function Hero({ onOpenConsultation }) {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="hidden xl:flex absolute top-36 left-10 animate-float-slow items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/80 backdrop-blur-md border border-blue-400/30 shadow-[0_8px_25px_rgba(37,99,235,0.1)] z-10"
+          className="hidden xl:flex absolute top-36 left-10 animate-float-slow items-center gap-3 px-4 py-2.5 rounded-md bg-white/80 backdrop-blur-md border border-blue-400/30 shadow-[0_8px_25px_rgba(37,99,235,0.1)] z-10"
         >
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#2563EB] to-indigo-600 flex items-center justify-center text-white text-xs shadow-sm font-bold">
+          <div className="w-8 h-8 rounded-md bg-gradient-to-tr from-[#2563EB] to-indigo-600 flex items-center justify-center text-white text-xs shadow-sm font-bold">
             ⚡
           </div>
           <div>
@@ -62,9 +62,9 @@ export default function Hero({ onOpenConsultation }) {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="hidden xl:flex absolute top-52 right-10 animate-float-reverse items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/80 backdrop-blur-md border border-indigo-400/30 shadow-[0_8px_25px_rgba(99,102,241,0.1)] z-10"
+          className="hidden xl:flex absolute top-52 right-10 animate-float-reverse items-center gap-3 px-4 py-2.5 rounded-md bg-white/80 backdrop-blur-md border border-indigo-400/30 shadow-[0_8px_25px_rgba(99,102,241,0.1)] z-10"
         >
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white text-xs shadow-sm font-bold">
+          <div className="w-8 h-8 rounded-md bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white text-xs shadow-sm font-bold">
             📈
           </div>
           <div>
@@ -139,15 +139,15 @@ export default function Hero({ onOpenConsultation }) {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="pt-2 flex flex-wrap justify-center items-center gap-6 text-xs font-medium text-[#52525B]"
           >
-            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 rounded-full border border-black/5 shadow-2xs">
+            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 rounded-md border border-black/5 shadow-2xs">
               <FiShield className="text-[#2563EB] w-4 h-4" />
               <span>Enterprise Security</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 rounded-full border border-black/5 shadow-2xs">
+            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 rounded-md border border-black/5 shadow-2xs">
               <FiCpu className="text-[#2563EB] w-4 h-4" />
               <span>Autonomous AI Agents</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 rounded-full border border-black/5 shadow-2xs">
+            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 rounded-md border border-black/5 shadow-2xs">
               <FiTrendingUp className="text-[#2563EB] w-4 h-4" />
               <span>Scalable Infrastructure</span>
             </div>
@@ -165,10 +165,10 @@ export default function Hero({ onOpenConsultation }) {
         >
 
           {/* Ambient Glow Halo behind Mockup */}
-          <div className="absolute -inset-4 rounded-[32px] bg-gradient-to-r from-blue-600/30 via-indigo-600/30 to-purple-600/30 blur-3xl opacity-80 pointer-events-none" />
+          <div className="absolute -inset-4 rounded-md bg-gradient-to-r from-blue-600/30 via-indigo-600/30 to-purple-600/30 blur-3xl opacity-80 pointer-events-none" />
 
           {/* Outer Glass Container Frame (Dark High-Tech Frame) */}
-          <div className="relative rounded-[24px] p-[1px] bg-gradient-to-b from-blue-500/40 via-indigo-500/30 to-slate-800/60 shadow-[0_25px_80px_-15px_rgba(15,23,42,0.6)] bg-[#0B0F19] overflow-hidden transition-all duration-500 hover:shadow-[0_35px_100px_-15px_rgba(37,99,235,0.3)]">
+          <div className="relative rounded-md p-[1px] bg-gradient-to-b from-blue-500/40 via-indigo-500/30 to-slate-800/60 shadow-[0_25px_80px_-15px_rgba(15,23,42,0.6)] bg-[#0B0F19] overflow-hidden transition-all duration-500 hover:shadow-[0_35px_100px_-15px_rgba(37,99,235,0.3)]">
 
             {/* Top Glowing Shimmer Border */}
             <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#2563EB]/80 to-transparent z-30" />
@@ -191,7 +191,7 @@ export default function Hero({ onOpenConsultation }) {
               </div>
 
               {/* Centered Search/URL Bar Mockup */}
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#161D2F] border border-white/10 text-xs text-slate-300 w-48 sm:w-72 shadow-inner">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#161D2F] border border-white/10 text-xs text-slate-300 w-48 sm:w-72 shadow-inner">
                 <span className="text-slate-400 font-mono text-[11px] truncate">https://app.mohfasa.com/dashboard</span>
               </div>
             </div>
@@ -210,9 +210,9 @@ export default function Hero({ onOpenConsultation }) {
           {/* Floating Action Badge 1 (Top-Right) */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="absolute -top-4 -right-4 hidden sm:flex bg-white/90 backdrop-blur-md border border-blue-500/30 p-3.5 rounded-2xl shadow-[0_10px_30px_rgba(37,99,235,0.15)] items-center gap-3 animate-pulse z-20"
+            className="absolute -top-4 -right-4 hidden sm:flex bg-white/90 backdrop-blur-md border border-blue-500/30 p-3.5 rounded-md shadow-[0_10px_30px_rgba(37,99,235,0.15)] items-center gap-3 animate-pulse z-20"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-sm">
+            <div className="w-9 h-9 rounded-md bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-sm">
               ⚡
             </div>
             <div>
@@ -224,7 +224,7 @@ export default function Hero({ onOpenConsultation }) {
           {/* Floating Action Badge 2 (Bottom-Left) */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="absolute -bottom-4 -left-4 hidden sm:flex bg-white/90 backdrop-blur-md border border-emerald-500/30 p-3.5 rounded-2xl shadow-[0_10px_30px_rgba(16,185,129,0.12)] items-center gap-3 z-20"
+            className="absolute -bottom-4 -left-4 hidden sm:flex bg-white/90 backdrop-blur-md border border-emerald-500/30 p-3.5 rounded-md shadow-[0_10px_30px_rgba(16,185,129,0.12)] items-center gap-3 z-20"
           >
             <div className="w-3 h-3 rounded-full bg-emerald-500 animate-ping" />
             <div>
@@ -240,8 +240,8 @@ export default function Hero({ onOpenConsultation }) {
       {/* Subtle Scroll Indicator */}
       <div className="mt-16 flex flex-col items-center justify-center gap-2 text-xs font-mono text-[#52525B] relative z-10">
         <span>SCROLL TO EXPLORE</span>
-        <div className="w-5 h-8 border border-black/20 rounded-full flex justify-center p-1">
-          <div className="w-1 h-2 bg-[#2563EB] rounded-full animate-bounce" />
+        <div className="w-5 h-8 border border-black/20 rounded-md flex justify-center p-1">
+          <div className="w-1 h-2 bg-[#2563EB] rounded-md animate-bounce" />
         </div>
       </div>
 

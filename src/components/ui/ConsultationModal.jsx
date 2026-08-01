@@ -24,7 +24,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-lg bg-white border border-black/10 rounded-[20px] p-6 md:p-8 shadow-2xl overflow-hidden text-[#09090B]">
+      <div className="relative w-full max-w-lg bg-white border border-black/10 rounded-md p-6 md:p-8 shadow-2xl overflow-hidden text-[#09090B]">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -61,7 +61,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   placeholder="e.g. Sarah Jenkins"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-[#F4F4F5] border border-black/10 rounded-xl px-4 py-3 text-sm text-[#09090B] placeholder-gray-400 focus:outline-none focus:border-[#2563EB] transition-colors"
+                  className="w-full bg-[#F4F4F5] border border-black/10 rounded-md px-4 py-3 text-sm text-[#09090B] placeholder-gray-400 focus:outline-none focus:border-[#2563EB] transition-colors"
                 />
               </div>
 
@@ -74,7 +74,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     placeholder="sarah@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#F4F4F5] border border-black/10 rounded-xl px-4 py-3 text-sm text-[#09090B] placeholder-gray-400 focus:outline-none focus:border-[#2563EB] transition-colors"
+                    className="w-full bg-[#F4F4F5] border border-black/10 rounded-md px-4 py-3 text-sm text-[#09090B] placeholder-gray-400 focus:outline-none focus:border-[#2563EB] transition-colors"
                   />
                 </div>
                 <div>
@@ -84,7 +84,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     placeholder="Apex Innovations"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full bg-[#F4F4F5] border border-black/10 rounded-xl px-4 py-3 text-sm text-[#09090B] placeholder-gray-400 focus:outline-none focus:border-[#2563EB] transition-colors"
+                    className="w-full bg-[#F4F4F5] border border-black/10 rounded-md px-4 py-3 text-sm text-[#09090B] placeholder-gray-400 focus:outline-none focus:border-[#2563EB] transition-colors"
                   />
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                 <select
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full bg-[#F4F4F5] border border-black/10 rounded-xl px-4 py-3 text-sm text-[#09090B] focus:outline-none focus:border-[#2563EB] transition-colors"
+                  className="w-full bg-[#F4F4F5] border border-black/10 rounded-md px-4 py-3 text-sm text-[#09090B] focus:outline-none focus:border-[#2563EB] transition-colors"
                 >
                   <option value="Custom Business Software">Custom Business Software / ERP / CRM</option>
                   <option value="AI & Business Automation">AI & Business Automation Agents</option>
@@ -113,13 +113,13 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   placeholder="Briefly describe your objectives, timeframe, or operational pain points..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-[#F4F4F5] border border-black/10 rounded-xl px-4 py-3 text-sm text-[#09090B] placeholder-gray-400 focus:outline-none focus:border-[#2563EB] transition-colors resize-none"
+                  className="w-full bg-[#F4F4F5] border border-black/10 rounded-md px-4 py-3 text-sm text-[#09090B] placeholder-gray-400 focus:outline-none focus:border-[#2563EB] transition-colors resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#2563EB] text-white py-3.5 rounded-xl font-semibold text-sm hover:bg-blue-600 transition-colors shadow-[0_4px_14px_rgba(37,99,235,0.3)] mt-2"
+                className="w-full bg-[#2563EB] text-white py-3.5 rounded-md font-semibold text-sm hover:bg-blue-600 transition-colors shadow-[0_4px_14px_rgba(37,99,235,0.3)] mt-2"
               >
                 Request Free Consultation
               </button>

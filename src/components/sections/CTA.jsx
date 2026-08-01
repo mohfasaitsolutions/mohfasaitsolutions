@@ -16,13 +16,13 @@ export default function CTA({ onOpenConsultation }) {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative rounded-[32px] bg-gradient-to-r from-[#0B0F19] via-[#0F172A] to-[#1E1B4B] p-10 md:p-16 text-center text-white overflow-hidden shadow-2xl border border-white/10"
+          className="relative rounded-md bg-gradient-to-r from-[#0B0F19] via-[#0F172A] to-[#1E1B4B] p-10 md:p-16 text-center text-white overflow-hidden shadow-2xl border border-white/10"
         >
           {/* Aceternity UI Background Beams inside card */}
           <BackgroundBeams />
 
           <div className="relative z-10 space-y-8 max-w-3xl mx-auto">
-            <span className="inline-block text-xs font-mono text-blue-400 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 uppercase tracking-widest font-semibold">
+            <span className="inline-block text-xs font-mono text-blue-400 px-4 py-1.5 rounded-md bg-blue-500/10 border border-blue-500/20 uppercase tracking-widest font-semibold">
               LET'S BUILD SOMETHING EXTRAORDINARY
             </span>
 
@@ -45,7 +45,7 @@ export default function CTA({ onOpenConsultation }) {
 
               <button 
                 onClick={onOpenConsultation}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-medium text-sm transition-all duration-300 shadow-lg backdrop-blur-md"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-white/10 hover:bg-white/15 border border-white/15 text-white font-medium text-sm transition-all duration-300 shadow-lg backdrop-blur-md"
               >
                 <FiMessageSquare className="w-4 h-4 text-blue-400" />
                 <span>Let's Talk</span>

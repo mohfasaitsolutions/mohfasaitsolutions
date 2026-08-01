@@ -107,17 +107,17 @@ export default function FeaturedWork({ onOpenConsultation }) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 whileHover={{ y: -6 }}
-                className="project-card bg-white border border-black/10 rounded-[20px] p-8 space-y-6 flex flex-col justify-between shadow-xs hover:border-[#2563EB] hover:shadow-lg transition-all duration-300 group"
+                className="project-card bg-white border border-black/10 rounded-md p-8 space-y-6 flex flex-col justify-between shadow-xs hover:border-[#2563EB] hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="space-y-5">
                   {/* Top Minimal UI Mockup Header */}
-                  <div className="bg-[#F8FAFC] border border-black/5 rounded-xl p-5 space-y-3">
+                  <div className="bg-[#F8FAFC] border border-black/5 rounded-md p-5 space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <MockupIcon className="w-5 h-5 text-[#2563EB]" />
                         <span className="text-xs font-mono text-[#52525B]">{project.category}</span>
                       </div>
-                      <span className="text-[11px] font-mono text-[#2563EB] bg-[#2563EB]/10 px-2.5 py-1 rounded-full border border-[#2563EB]/20 font-semibold">
+                      <span className="text-[11px] font-mono text-[#2563EB] bg-[#2563EB]/10 px-2.5 py-1 rounded-md border border-[#2563EB]/20 font-semibold">
                         {project.stats}
                       </span>
                     </div>

@@ -6,7 +6,7 @@ export default function LogoMohfasa({ className = 'h-9', showText = true }) {
       <img
         src="logo.png"
         alt="MOHFASA IT Solutions Logo"
-        className="h-9 w-auto object-contain rounded-lg shadow-sm"
+        className="h-9 w-auto object-contain rounded-md shadow-sm"
       />
       {showText && (
         <span className="font-bold text-lg text-[#09090B] tracking-tight">

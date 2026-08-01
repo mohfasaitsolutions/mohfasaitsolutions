@@ -55,7 +55,7 @@ export default function Navbar({ onOpenConsultation }) {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 bg-white border border-black/10 px-5 py-2 rounded-full shadow-sm backdrop-blur-sm">
+        <nav className="hidden lg:flex items-center gap-1 bg-white border border-black/10 px-5 py-2 rounded-md shadow-sm backdrop-blur-sm">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
@@ -68,7 +68,7 @@ export default function Navbar({ onOpenConsultation }) {
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-[#2563EB] rounded-full" />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-[#2563EB] rounded-md" />
                 )}
               </a>
             );
@@ -116,7 +116,7 @@ export default function Navbar({ onOpenConsultation }) {
                   setMobileMenuOpen(false);
                   onOpenConsultation();
                 }}
-                className="w-full text-center py-3 bg-[#2563EB] text-white rounded-full font-medium text-sm shadow-[0_4px_14px_rgba(37,99,235,0.3)]"
+                className="w-full text-center py-3 bg-[#2563EB] text-white rounded-md font-medium text-sm shadow-[0_4px_14px_rgba(37,99,235,0.3)]"
               >
                 Book a Free Consultation
               </button>

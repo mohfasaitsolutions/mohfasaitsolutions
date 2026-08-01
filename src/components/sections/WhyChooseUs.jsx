@@ -75,9 +75,9 @@ export default function WhyChooseUs() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.07 }}
                 whileHover={{ y: -6 }}
-                className="why-card bg-white border border-black/10 rounded-[20px] p-8 space-y-4 shadow-sm hover:border-[#2563EB] hover:shadow-md transition-all duration-300 group"
+                className="why-card bg-white border border-black/10 rounded-md p-8 space-y-4 shadow-sm hover:border-[#2563EB] hover:shadow-md transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#F4F4F5] border border-black/5 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-md bg-[#F4F4F5] border border-black/5 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all duration-300">
                   <Icon className="w-6 h-6" />
                 </div>
 

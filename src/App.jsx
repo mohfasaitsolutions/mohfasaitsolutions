@@ -3,7 +3,6 @@ import Lenis from 'lenis';
 
 // UI Utility Components
 import Preloader from './components/ui/Preloader';
-import CustomCursor from './components/ui/CustomCursor';
 import ScrollProgress from './components/ui/ScrollProgress';
 import ScrollToTop from './components/ui/ScrollToTop';
 import ConsultationModal from './components/ui/ConsultationModal';
@@ -55,7 +54,7 @@ export default function App() {
   const handleCloseConsultation = () => setIsConsultationOpen(false);
 
   return (
-    <div className="relative bg-[#FAFAFA] text-[#09090B] min-h-screen selection:bg-[#2563EB] selection:text-white custom-cursor-active overflow-x-hidden">
+    <div className="relative bg-[#FAFAFA] text-[#09090B] min-h-screen selection:bg-[#2563EB] selection:text-white overflow-x-hidden">
       {/* Structural Architectural Light Background Grid */}
       <div
         className="fixed inset-0 pointer-events-none z-0 opacity-[0.04]"
@@ -69,7 +68,6 @@ export default function App() {
       <div className="noise-overlay" aria-hidden="true" />
 
       {/* Micro-Interactions */}
-      <CustomCursor />
       <ScrollProgress />
       <Preloader isLoading={isLoading} />
 

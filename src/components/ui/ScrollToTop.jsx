@@ -29,7 +29,7 @@ export default function ScrollToTop() {
     <button
       onClick={scrollToTop}
       aria-label="Scroll to top"
-      className="fixed bottom-6 right-6 z-50 p-3.5 bg-[#121212] border border-white/10 text-white rounded-full shadow-2xl hover:border-[#2563EB] hover:text-[#2563EB] transition-all duration-300 transform hover:-translate-y-1 group"
+      className="fixed bottom-6 right-6 z-50 p-3.5 bg-[#121212] border border-white/10 text-white rounded-md shadow-2xl hover:border-[#2563EB] hover:text-[#2563EB] transition-all duration-300 transform hover:-translate-y-1 group"
     >
       <FiArrowUp className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
     </button>

@@ -31,7 +31,7 @@ export default function SpotlightCard({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
-      className={`relative rounded-2xl border bg-[#111726]/80 p-8 backdrop-blur-md overflow-hidden transition-all duration-300 ${className}`}
+      className={`relative rounded-md border bg-[#111726]/80 p-8 backdrop-blur-md overflow-hidden transition-all duration-300 ${className}`}
       style={{
         borderColor: opacity > 0 ? hoverBorderColor : borderColor,
       }}
@@ -44,7 +44,7 @@ export default function SpotlightCard({
           background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
         }}
       />
-      
+
       {/* Content */}
       <div className="relative z-20 h-full">{children}</div>
     </div>
