@@ -3,16 +3,43 @@ import { FiArrowRight, FiCheck, FiMail, FiPhone } from 'react-icons/fi';
 import { FaLinkedinIn, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa6';
 import LogoMohfasa from '../ui/LogoMohfasa';
 
+const WEB3FORMS_KEY = '1a5378c0-90aa-4111-adff-00a47e24eeb9';
+
 export default function Footer({ onOpenConsultation }) {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setTimeout(() => setSubscribed(false), 3000);
-      setEmail('');
+    if (!email) return;
+    setLoading(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `📬 New Newsletter Subscription — ${email}`,
+          from_name: 'Mohfasa IT Solutions Website',
+          email: email,
+          message: `User subscribed to Tech Insights newsletter with email: ${email}`,
+        }),
+      });
+      const data = await response.json();
+      if (response.ok && data.success) {
+        setSubscribed(true);
+        setEmail('');
+        setTimeout(() => setSubscribed(false), 4000);
+      }
+    } catch (err) {
+      console.error('Newsletter error:', err);
+    } finally {
+      setLoading(false);
     }
   };
 

@@ -44,18 +44,19 @@ export default function ConsultationModal({ isOpen, onClose }) {
           access_key: WEB3FORMS_KEY,
           subject: `🚀 New Consultation Request — ${formData.service} | ${formData.name}`,
           from_name: 'Mohfasa IT Solutions Website',
+          reply_to: formData.email,
           name: formData.name,
           email: formData.email,
           company: formData.company || 'Not provided',
           service: formData.service,
           message: formData.message || 'No additional details provided.',
-          botcheck: '', // honeypot anti-spam field
         }),
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (response.ok && data.success) {
         setStatus('success');
-        // Reset form after 3 seconds and close modal
         setTimeout(() => {
           setStatus('idle');
           setFormData({
@@ -68,11 +69,12 @@ export default function ConsultationModal({ isOpen, onClose }) {
           onClose();
         }, 3000);
       } else {
-        const data = await response.json();
-        setErrorMsg(data?.errors?.[0]?.message || 'Something went wrong. Please try again.');
+        console.error('Web3Forms error response:', data);
+        setErrorMsg(data?.message || 'Something went wrong. Please try again.');
         setStatus('error');
       }
-    } catch {
+    } catch (err) {
+      console.error('Web3Forms network error:', err);
       setErrorMsg('Network error. Please check your connection and try again.');
       setStatus('error');
     }
