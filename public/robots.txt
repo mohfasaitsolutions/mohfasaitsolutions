@@ -1,0 +1,30 @@
+# robots.txt — Mohfasa IT Solutions
+# https://mohfasaitsolutions.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block private/API routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.env
+Disallow: /private/
+
+# Block URL parameters that create duplicate content
+Disallow: /*?*sort=*
+Disallow: /*?*filter=*
+Disallow: /*?*ref=*
+Disallow: /search?*
+
+# Sitemaps
+Sitemap: https://mohfasaitsolutions.com/sitemap.xml
+
+# Crawl delay for aggressive bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10

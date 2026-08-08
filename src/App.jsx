@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEOHead from './components/seo/SEOHead';
 import Lenis from 'lenis';
 
 // UI Utility Components
@@ -55,6 +56,8 @@ export default function App() {
 
   return (
     <div className="relative bg-[#FAFAFA] text-[#09090B] min-h-screen selection:bg-[#2563EB] selection:text-white overflow-x-hidden">
+      {/* SEO: Dynamic JSON-LD schemas injected into <head> */}
+      <SEOHead />
       {/* Structural Architectural Light Background Grid */}
       <div
         className="fixed inset-0 pointer-events-none z-0 opacity-[0.04]"

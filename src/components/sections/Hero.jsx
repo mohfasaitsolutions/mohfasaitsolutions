@@ -11,6 +11,7 @@ export default function Hero({ onOpenConsultation }) {
   return (
     <section
       id="home"
+      aria-label="Mohfasa IT Solutions — Custom Software Development Company"
       className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden bg-[#FAFAFA]"
     >
       {/* ========================================================================= */}
@@ -91,12 +92,12 @@ export default function Hero({ onOpenConsultation }) {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-4xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-[#09090B] leading-[1.08]"
           >
-            Elevate Your Digital Ecosystem with{' '}
+            Custom Software & AI Solutions{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] via-indigo-600 to-purple-600 inline-block pb-2">
-              Mohfasa
+              Built Faster
             </span>{' '}
             <br className="hidden sm:inline" />
-
+            with Mohfasa
           </motion.h1>
 
           {/* Subtitle */}
@@ -106,7 +107,7 @@ export default function Hero({ onOpenConsultation }) {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="text-base sm:text-lg md:text-xl text-[#52525B] leading-relaxed max-w-2xl mx-auto font-normal"
           >
-            Streamline, optimize, and scale your business operations with our powerful AI agents, custom cloud architecture, and modern enterprise software.
+            Top-rated custom software development company serving India, Dubai &amp; USA. We build AI solutions, web apps, mobile apps, CRM &amp; ERP systems — engineered to scale your business.
           </motion.p>
 
           {/* Action CTA Buttons Styled exactly like screenshot (Solid filled primary + outlined secondary) */}

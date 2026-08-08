@@ -8,6 +8,7 @@ export default function CTA({ onOpenConsultation }) {
   return (
     <section
       id="contact"
+      aria-label="Contact Mohfasa IT Solutions — Get a Free Consultation"
       className="py-20 md:py-28 bg-[#FAFAFA] border-t border-black/10 relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
@@ -34,7 +35,7 @@ export default function CTA({ onOpenConsultation }) {
             </h2>
 
             <p className="text-sm md:text-base text-slate-300 max-w-xl mx-auto leading-relaxed font-normal">
-              Let’s discuss how Mohfasa IT Solutions can help automate operations, optimize workflows, and scale your technology with confidence.
+              Let’s discuss how Mohfasa IT Solutions — your custom software development company in India — can help automate operations, build AI solutions, and scale your technology in Dubai, USA &amp; beyond.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
@@ -52,11 +53,12 @@ export default function CTA({ onOpenConsultation }) {
               </button>
             </div>
 
-            <div className="pt-6 border-t border-white/10 flex flex-wrap justify-center items-center gap-6 text-xs text-slate-400 font-mono">
-              <span>✓ Zero Obligation Strategy Call</span>
-              <span>✓ NDA Protected</span>
-              <span>✓ Response Within 24 Hours</span>
-            </div>
+            <ul className="pt-6 border-t border-white/10 flex flex-wrap justify-center items-center gap-6 text-xs text-slate-400 font-mono list-none">
+              <li>✓ Zero Obligation Strategy Call</li>
+              <li>✓ NDA Protected</li>
+              <li>✓ Response Within 24 Hours</li>
+              <li>✓ Serving India, Dubai &amp; USA</li>
+            </ul>
           </div>
         </motion.div>
       </div>

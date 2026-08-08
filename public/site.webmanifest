@@ -1,0 +1,21 @@
+{
+  "name": "Mohfasa IT Solutions",
+  "short_name": "Mohfasa",
+  "description": "Custom Software Development, AI, Web & Mobile Apps — India, Dubai, USA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

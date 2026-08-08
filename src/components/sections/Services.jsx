@@ -108,6 +108,7 @@ export default function Services({ onOpenConsultation }) {
   return (
     <section
       id="services"
+      aria-label="Software Development Services by Mohfasa IT Solutions"
       className="py-24 md:py-32 bg-[#FAFAFA] border-t border-black/10 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16 relative z-10">
@@ -125,7 +126,7 @@ export default function Services({ onOpenConsultation }) {
               OUR CORE CAPABILITIES
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#09090B] leading-tight">
-              End-to-End Technology Solutions <br />
+              Custom Software &amp; AI Development Services <br />
               <span className="text-[#2563EB]">For Modern Business.</span>
             </h2>
           </div>
@@ -139,12 +140,15 @@ export default function Services({ onOpenConsultation }) {
           {servicesData.map((service, idx) => {
             const Icon = service.icon;
             return (
-              <motion.div
+              <motion.article
                 key={idx}
+                itemScope
+                itemType="https://schema.org/Service"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
+                aria-label={service.title}
               >
                 <SpotlightCard
                   spotlightColor="rgba(59, 130, 246, 0.3)"
@@ -167,11 +171,17 @@ export default function Services({ onOpenConsultation }) {
                       </button>
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    <h3
+                      className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors"
+                      itemProp="name"
+                    >
                       {service.title}
                     </h3>
 
-                    <p className="text-xs md:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                    <p
+                      className="text-xs md:text-sm text-slate-300 leading-relaxed mb-6 font-normal"
+                      itemProp="description"
+                    >
                       {service.desc}
                     </p>
                   </div>
@@ -190,7 +200,7 @@ export default function Services({ onOpenConsultation }) {
                     </div>
                   </div>
                 </SpotlightCard>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>

@@ -41,7 +41,10 @@ export default function Testimonials() {
   const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-24 md:py-32 bg-[#FAFAFA] border-t border-black/10 relative">
+    <section
+      aria-label="Client Testimonials — Mohfasa IT Solutions Reviews"
+      className="py-24 md:py-32 bg-[#FAFAFA] border-t border-black/10 relative"
+    >
       <div className="max-w-5xl mx-auto px-6 md:px-12 space-y-12">
         
         {/* Header */}
@@ -66,29 +69,44 @@ export default function Testimonials() {
 
           <div className="relative z-10 space-y-6">
             <AnimatePresence mode="wait">
-              <motion.p 
+              <motion.blockquote
                 key={currentIndex}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.4 }}
+                cite={`https://mohfasaitsolutions.com/#testimonial-${currentIndex}`}
                 className="text-lg md:text-2xl text-[#09090B] font-medium leading-relaxed italic min-h-[100px]"
               >
                 "{testimonials[currentIndex].quote}"
-              </motion.p>
+              </motion.blockquote>
             </AnimatePresence>
 
             <div className="flex items-center justify-between pt-6 border-t border-black/10">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-md bg-gradient-to-tr from-[#2563EB] to-indigo-600 text-white flex items-center justify-center font-bold text-base shadow-md">
+              <div
+                className="flex items-center gap-4"
+                itemScope
+                itemType="https://schema.org/Review"
+              >
+                <div
+                  className="w-12 h-12 rounded-md bg-gradient-to-tr from-[#2563EB] to-indigo-600 text-white flex items-center justify-center font-bold text-base shadow-md"
+                  aria-hidden="true"
+                >
                   {testimonials[currentIndex].avatar}
                 </div>
-                <div>
-                  <h4 className="text-base font-bold text-[#09090B]">
+                <div itemProp="author" itemScope itemType="https://schema.org/Person">
+                  <h4
+                    className="text-base font-bold text-[#09090B]"
+                    itemProp="name"
+                  >
                     {testimonials[currentIndex].name}
                   </h4>
                   <p className="text-xs text-[#52525B]">
-                    {testimonials[currentIndex].role} — <span className="text-[#2563EB] font-medium">{testimonials[currentIndex].company}</span>
+                    <span itemProp="jobTitle">{testimonials[currentIndex].role}</span>
+                    {' '}&mdash;{' '}
+                    <span className="text-[#2563EB] font-medium" itemProp="worksFor">
+                      {testimonials[currentIndex].company}
+                    </span>
                   </p>
                 </div>
               </div>

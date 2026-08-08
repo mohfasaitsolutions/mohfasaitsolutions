@@ -42,6 +42,7 @@ export default function Navbar({ onOpenConsultation }) {
 
   return (
     <header
+      role="banner"
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled
           ? 'py-3 bg-white/90 border-b border-black/10 backdrop-blur-md shadow-sm'
@@ -55,13 +56,17 @@ export default function Navbar({ onOpenConsultation }) {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 bg-white border border-black/10 px-5 py-2 rounded-md shadow-sm backdrop-blur-sm">
+        <nav
+          aria-label="Main navigation"
+          className="hidden lg:flex items-center gap-1 bg-white border border-black/10 px-5 py-2 rounded-md shadow-sm backdrop-blur-sm"
+        >
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
               <a
                 key={link.name}
                 href={link.href}
+                aria-current={isActive ? 'page' : undefined}
                 className={`relative px-4 py-1.5 text-xs font-medium transition-colors duration-200 ${
                   isActive ? 'text-[#09090B] font-semibold' : 'text-[#52525B] hover:text-[#09090B]'
                 }`}

@@ -16,6 +16,9 @@ export default function About() {
   return (
     <section
       id="about"
+      aria-label="About Mohfasa IT Solutions — Software Development Company in India"
+      itemScope
+      itemType="https://schema.org/AboutPage"
       className="py-24 md:py-32 bg-[#FAFAFA] border-t border-black/10 relative"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -34,12 +37,15 @@ export default function About() {
             </span>
 
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#09090B] leading-tight">
-              Your Long-Term <br />
-              <span className="text-[#2563EB]">Technology Partner.</span>
+              Your Trusted Software Development Partner in{' '}
+              <span className="text-[#2563EB]">India, Dubai &amp; USA.</span>
             </h2>
 
-            <p className="text-base md:text-lg text-[#52525B] leading-relaxed font-normal">
-              At Mohfasa IT Solutions, we build technology that solves real business challenges. Whether you need custom software, AI-powered automation, scalable cloud architecture, or digital growth strategies, we deliver solutions that create measurable business value.
+            <p
+              className="text-base md:text-lg text-[#52525B] leading-relaxed font-normal"
+              itemProp="description"
+            >
+              At Mohfasa IT Solutions, we build technology that solves real business challenges. We are a custom software development company in India delivering AI-powered automation, scalable web &amp; mobile apps, CRM systems, ERP solutions, and cloud infrastructure to clients in India, Dubai, and the USA.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">

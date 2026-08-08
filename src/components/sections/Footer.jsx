@@ -17,7 +17,12 @@ export default function Footer({ onOpenConsultation }) {
   };
 
   return (
-    <footer className="bg-white border-t border-black/10 text-[#52525B] pt-16 pb-12 text-sm relative">
+    <footer
+      role="contentinfo"
+      itemScope
+      itemType="https://schema.org/Organization"
+      className="bg-white border-t border-black/10 text-[#52525B] pt-16 pb-12 text-sm relative"
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
         
         {/* Main Footer Grid */}
@@ -29,8 +34,12 @@ export default function Footer({ onOpenConsultation }) {
               <LogoMohfasa />
             </a>
 
-            <p className="text-xs text-[#52525B] leading-relaxed max-w-sm">
-              MOHFASA IT Solutions is a premium technology partner helping businesses digitize, automate, and scale with high-performance software.
+            <p className="text-xs text-[#52525B] leading-relaxed max-w-sm" itemProp="description">
+              MOHFASA IT Solutions is a custom software development company helping businesses in India, Dubai &amp; USA digitize, automate, and scale with high-performance software.
+            </p>
+
+            <p className="text-[11px] text-[#52525B] font-mono">
+              📍 Bhopal, India &nbsp;|&nbsp; Dubai, UAE &nbsp;|&nbsp; Serving USA
             </p>
 
             <div className="pt-2 text-xs font-mono text-[#09090B] font-semibold">
@@ -121,27 +130,35 @@ export default function Footer({ onOpenConsultation }) {
               )}
             </form>
 
-            <div className="pt-2 space-y-1.5 text-xs text-[#52525B]">
-              <div className="flex items-center gap-2">
-                <FiMail className="text-[#2563EB] w-3.5 h-3.5" />
-                <span>mohfasaitsolutions@gmail.com</span>
+            <address className="pt-2 space-y-1.5 text-xs text-[#52525B] not-italic">
+              <div className="flex items-center gap-2" itemProp="email">
+                <FiMail className="text-[#2563EB] w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
+                <a href="mailto:mohfasaitsolutions@gmail.com" className="hover:text-[#09090B] transition-colors">
+                  mohfasaitsolutions@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2" itemProp="telephone">
+                <FiPhone className="text-[#2563EB] w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
+                <a href="tel:+919340401205" className="hover:text-[#09090B] transition-colors">
+                  +91 9340401205
+                </a>
               </div>
               <div className="flex items-center gap-2">
-                <FiPhone className="text-[#2563EB] w-3.5 h-3.5" />
-                <span>+91 9340401205</span>
+                <span className="text-[#2563EB] w-3.5 h-3.5 flex-shrink-0 text-xs" aria-hidden="true">📍</span>
+                <span itemProp="address">Bhopal, Madhya Pradesh, India</span>
               </div>
-            </div>
+            </address>
           </div>
 
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-black/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#52525B]">
-          <p>© {new Date().getFullYear()} MOHFASA IT Solutions. All rights reserved.</p>
+          <p itemProp="copyrightNotice">© {new Date().getFullYear()} MOHFASA IT Solutions. All rights reserved. | Software Development Company in India</p>
           <div className="flex items-center gap-6 text-[11px]">
-            <a href="#home" className="hover:text-[#09090B] transition-colors">Privacy Policy</a>
-            <a href="#home" className="hover:text-[#09090B] transition-colors">Terms of Service</a>
-            <a href="#home" className="hover:text-[#09090B] transition-colors">Security Overview</a>
+            <a href="/privacy-policy" className="hover:text-[#09090B] transition-colors">Privacy Policy</a>
+            <a href="/terms-of-service" className="hover:text-[#09090B] transition-colors">Terms of Service</a>
+            <a href="/sitemap.xml" className="hover:text-[#09090B] transition-colors">Sitemap</a>
           </div>
         </div>
 
@@ -149,5 +166,3 @@ export default function Footer({ onOpenConsultation }) {
     </footer>
   );
 }
-
-
