@@ -27,14 +27,23 @@ export default function ConsultationModal({ isOpen, onClose }) {
     setErrorMsg('');
 
     try {
-      const data = new FormData(e.target);
-      data.append('access_key', WEB3FORMS_KEY);
-      data.append('from_name', 'Mohfasa IT Solutions Website');
-      data.append('subject', `🚀 New Consultation Request — ${formData.service} | ${formData.name}`);
-
       const response = await fetch(WEB3FORMS_URL, {
         method: 'POST',
-        body: data,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `🚀 New Consultation Request — ${formData.service} | ${formData.name}`,
+          from_name: 'Mohfasa IT Solutions Website',
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || 'Not provided',
+          service: formData.service,
+          message: formData.message || 'No additional details provided.',
+          botcheck: '',
+        }),
       });
 
       const resData = await response.json();
