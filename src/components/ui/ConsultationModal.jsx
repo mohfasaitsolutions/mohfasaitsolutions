@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { FiX, FiCheckCircle, FiLoader } from 'react-icons/fi';
 
-// ─────────────────────────────────────────────────────────────────────────────
-// WEB3FORMS SETUP — 100% FREE (250 submissions/month, no credit card)
-// 1. Go to https://web3forms.com
-// 2. Enter: mohfasaitsolutions@gmail.com
-// 3. Click "Create your Access Key"
-// 4. Paste the key below (replace YOUR_WEB3FORMS_ACCESS_KEY)
-// ─────────────────────────────────────────────────────────────────────────────
 const WEB3FORMS_KEY = '1a5378c0-90aa-4111-adff-00a47e24eeb9';
 const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
 
@@ -34,28 +27,19 @@ export default function ConsultationModal({ isOpen, onClose }) {
     setErrorMsg('');
 
     try {
+      const data = new FormData(e.target);
+      data.append('access_key', WEB3FORMS_KEY);
+      data.append('from_name', 'Mohfasa IT Solutions Website');
+      data.append('subject', `🚀 New Consultation Request — ${formData.service} | ${formData.name}`);
+
       const response = await fetch(WEB3FORMS_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: `🚀 New Consultation Request — ${formData.service} | ${formData.name}`,
-          from_name: 'Mohfasa IT Solutions Website',
-          reply_to: formData.email,
-          name: formData.name,
-          email: formData.email,
-          company: formData.company || 'Not provided',
-          service: formData.service,
-          message: formData.message || 'No additional details provided.',
-        }),
+        body: data,
       });
 
-      const data = await response.json();
+      const resData = await response.json();
 
-      if (response.ok && data.success) {
+      if (response.ok && resData.success) {
         setStatus('success');
         setTimeout(() => {
           setStatus('idle');
@@ -69,8 +53,8 @@ export default function ConsultationModal({ isOpen, onClose }) {
           onClose();
         }, 3000);
       } else {
-        console.error('Web3Forms error response:', data);
-        setErrorMsg(data?.message || 'Something went wrong. Please try again.');
+        console.error('Web3Forms response error:', resData);
+        setErrorMsg(resData?.message || 'Something went wrong. Please try again.');
         setStatus('error');
       }
     } catch (err) {
@@ -130,7 +114,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+            <form onSubmit={handleSubmit} className="space-y-4">
 
               {/* Full Name */}
               <div>
