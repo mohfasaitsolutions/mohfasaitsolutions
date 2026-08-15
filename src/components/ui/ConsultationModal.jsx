@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FiX, FiCheckCircle, FiLoader } from 'react-icons/fi';
 
-const WEB3FORMS_KEY = '1a5378c0-90aa-4111-adff-00a47e24eeb9';
+const WEB3FORMS_KEY = import.meta.env.NEXT_PUBLIC_WEB3FORMS_KEY || import.meta.env.VITE_WEB3FORMS_KEY || '1a5378c0-90aa-4111-adff-00a47e24eeb9';
 const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
 
 export default function ConsultationModal({ isOpen, onClose }) {
@@ -44,9 +44,21 @@ export default function ConsultationModal({ isOpen, onClose }) {
           message: formData.message || 'No additional details provided.',
           botcheck: '',
         }),
-      });
 
+      });
+      console.log(JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: `🚀 New Consultation Request — ${formData.service} | ${formData.name}`,
+        from_name: 'Mohfasa IT Solutions Website',
+        name: formData.name,
+        email: formData.email,
+        company: formData.company || 'Not provided',
+        service: formData.service,
+        message: formData.message || 'No additional details provided.',
+        botcheck: '',
+      }))
       const resData = await response.json();
+      console.log("web3forms", resData, WEB3FORMS_KEY, "chal gaya")
 
       if (response.ok && resData.success) {
         setStatus('success');
